@@ -32,29 +32,22 @@ const showEvents = (event, id) => {
 }
 
 const showLatestEvent = (latestEvent, id) => {
-
-    const {
-        name,
-        attendee,
-        status,
-        description,
-        booked
-    } = latestEvent
+    const {name, attendee, status, description, booked} = latestEvent;
     // Get the first event
     welcomeEvent.innerHTML = `
-        <h1>${name}</h1>
-        <p>${description.length >= 100 ? `${description.substring(0, 100)}...` : description}</p>
+    <h1>${name}</h1>
+    <p>${description.length >= 100 ? `${description.substring(0, 100)}...` : description}</p>
         <div>
-            <span>Attendees: ${attendee - booked}</span>
-            <span>Status: ${status === 0 ? 'free': 'paid'}</span>
+            <span>Attendees: &{attendee - booked}</span>
+            <span>Status: ${status === 0 ? 'free' : 'piad'}</span>
         </div>
-        <button onclick="bookEvent(${booked} ,'${id}')" class="btn btn-tertiary">Book</button>
+        <button onclick="bookEvent(${booked} , '${id}')" class="btn btn-tertiary">Book</button>
         `
 }
 
 form.addEventListener('submit', e => {
-    e.preventDefault()
-    addNewEvent()
+    e.preventDefault();
+    addNewEvent();
 })
 
 window.onscroll = () => {
