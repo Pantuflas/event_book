@@ -38,8 +38,8 @@ const showLatestEvent = (latestEvent, id) => {
     <h1>${name}</h1>
     <p>${description.length >= 100 ? `${description.substring(0, 100)}...` : description}</p>
         <div>
-            <span>Attendees: &{attendee - booked}</span>
-            <span>Status: ${status === 0 ? 'free' : 'piad'}</span>
+            <span>Attendees: ${attendee - booked}</span>
+            <span>Status: ${status === 0 ? 'free' : 'paid'}</span>
         </div>
         <button onclick="bookEvent(${booked} , '${id}')" class="btn btn-tertiary">Book</button>
         `

@@ -14,8 +14,8 @@ db.collection('events').onSnapshot(snapshot => {
 
 const addNewEvent = () => {
     const event = {
-        name: FormData.name.value,
-        attendee: FormData.attendee.value,
+        name: form.name.value,
+        attendee: form.attendee.value,
         booked: 0,
         description: form.description.value,
         status: parseInt(form.status.value, 10)
